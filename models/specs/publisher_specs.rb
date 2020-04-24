@@ -31,4 +31,24 @@ class PublisherTest < MiniTest::Test
         assert_equal("+44 (0)1206 256000", @publisher.phone_number)
     end
 
+    def test_can_change_name()
+        @publisher.name = "Vintage Cheese"
+        assert_equal("Vintage Cheese", @publisher.name)
+    end
+
+    def test_can_change_address()
+        @publisher.address = "Patriothall, Edinburgh"
+        assert_equal("Patriothall, Edinburgh", @publisher.address)
+    end
+
+    def test_can_change_email()
+        @publisher.email = "me@publisher.com"
+        assert_equal("me@publisher.com", @publisher.email)
+    end
+
+    def test_can_change_phone_number()
+        @publisher.phone_number = "12345"
+        assert_equal("12345", @publisher.phone_number)
+    end
+
 end
