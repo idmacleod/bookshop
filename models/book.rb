@@ -17,4 +17,8 @@ class Book
         @copies_sold = 0
     end
 
+    def buy_from_publisher(copies)
+        @stock_count += copies if copies > 0
+    end
+
 end

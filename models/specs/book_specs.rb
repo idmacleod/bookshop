@@ -55,4 +55,16 @@ class BookTest < MiniTest::Test
         assert_equal(0, @book.copies_sold)
     end
 
+    def test_buy_from_publisher()
+        @book.buy_from_publisher(5)
+        @book.buy_from_publisher(6)
+        @book.buy_from_publisher(0)
+        assert_equal(14, @book.stock_count)
+    end
+
+    def test_cannot_buy_negative_copies()
+        @book.buy_from_publisher(-45)
+        assert_equal(3, @book.stock_count)
+    end
+
 end
