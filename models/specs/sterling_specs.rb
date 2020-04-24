@@ -25,11 +25,11 @@ class SterlingTest < MiniTest::Test
     end
 
     def test_add_simple
-        assert_equal("£67.62", sterling.add(@sterling1, @sterling2).display())
+        assert_equal("£67.62", Sterling.add(@sterling1, @sterling2).display())
     end
 
     def test_add_complex
-        assert_equal("£71.02", sterling.add(@sterling1, @sterling3).display())
+        assert_equal("£71.02", Sterling.add(@sterling1, @sterling3).display())
     end
 
 end
