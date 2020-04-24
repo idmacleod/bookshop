@@ -1,6 +1,7 @@
 class Book
 
-    attr_accessor :title, :author_id, :publisher_id, :description, :genre, :stock_count, :copies_sold
+    attr_accessor :title, :author_id, :publisher_id, :description, :genre
+    attr_accessor :buy_cost, :sell_price, :stock_count, :copies_sold
     attr_reader :id
 
     def initialize(options)

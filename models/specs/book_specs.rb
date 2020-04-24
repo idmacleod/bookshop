@@ -13,8 +13,8 @@ class BookTest < MiniTest::Test
             "publisher_id" => "200",
             "description" => "Surreal sequel to 'A Wild Sheep Chase', inspired by film noir.",
             "genre" => "Fiction",
-            "buy_cost" => Money.new("£", 4, 0)
-            "sell_price" => Money.new("£", 6, 99)
+            "buy_cost" => "400",
+            "sell_price" => "699",
             "stock_count" => "3"
         })
     end
@@ -40,11 +40,11 @@ class BookTest < MiniTest::Test
     end
 
     def test_book_has_buy_cost()
-        assert_equal("4.00", @book.buy_cost)
+        assert_equal(400, @book.buy_cost)
     end
 
     def test_book_has_sell_price()
-        assert_equal("6.99", @book.sell_price)
+        assert_equal(699, @book.sell_price)
     end
 
     def test_books_has_stock_count()
