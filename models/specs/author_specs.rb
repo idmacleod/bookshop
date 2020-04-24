@@ -1,6 +1,6 @@
 require("minitest/autorun")
 require("minitest/reporters")
-Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+MiniTest::Reporters.use! MiniTest::Reporters::SpecReporter.new
 
 require_relative("../author")
 
