@@ -26,7 +26,7 @@ class Book
     end
 
     def sell_to_customer(copies)
-        if copies > 0
+        if (copies > 0 && enough_stock?(copies))
             @stock_count -= copies
             @copies_sold += copies
         end

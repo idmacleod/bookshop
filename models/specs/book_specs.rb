@@ -90,4 +90,9 @@ class BookTest < MiniTest::Test
         assert_equal(3, @book.stock_count)
     end
 
+    def test_cannot_sell_copies_if_not_enough_stock()
+        @book.sell_to_customer(5)
+        assert_equal(3, @book.stock_count)
+    end
+
 end
