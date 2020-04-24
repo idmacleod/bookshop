@@ -67,4 +67,27 @@ class BookTest < MiniTest::Test
         assert_equal(3, @book.stock_count)
     end
 
+    def test_enough_stock__true()
+        assert(@book.enough_stock?(2))
+    end
+
+    def test_enough_stock__false()
+        refute(@book.enough_stock?(4))
+    end
+
+    def test_sell_to_customer()
+        @book.sell_to_customer(2)
+        @book.sell_to_customer(0)
+        assert_equal(1, @book.stock_count)
+        assert_equal(2, @book.copies_sold)
+        @book.sell_to_customer(1)
+        assert_equal(0, @book.stock_count)
+        assert_equal(3, @book.copies_sold)
+    end
+
+    def test_cannot_sell_negative_copies()
+        @book.sell_to_customer(-8)
+        assert_equal(3, @book.stock_count)
+    end
+
 end

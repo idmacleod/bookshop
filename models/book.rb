@@ -21,4 +21,15 @@ class Book
         @stock_count += copies if copies > 0
     end
 
+    def enough_stock?(copies)
+        return @stock_count >= copies
+    end
+
+    def sell_to_customer(copies)
+        if copies > 0
+            @stock_count -= copies
+            @copies_sold += copies
+        end
+    end
+
 end
