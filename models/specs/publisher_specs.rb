@@ -9,9 +9,9 @@ class PublisherTest < MiniTest::Test
     def setup()
         @publisher = Publisher.new({
             "name" => "Vintage",
-            "address" => "Vintage, Penguin Random House, 20 Vauxhall Bridge Road London, SW1V 2SA",
+            "address" => "Vintage, Penguin Random House, 20 Vauxhall Bridge Road, London, SW1V 2SA",
             "email" => "customersupport@penguinrandomhouse.co.uk",
-            "phone_number" => "+44 (0)1206 256000"
+            "phone_number" => "+44 (0)20 7840 8400"
         })
     end
 
@@ -20,7 +20,7 @@ class PublisherTest < MiniTest::Test
     end
 
     def test_publisher_has_address()
-        assert_equal("Vintage, Penguin Random House, 20 Vauxhall Bridge Road London, SW1V 2SA", @publisher.address)
+        assert_equal("Vintage, Penguin Random House, 20 Vauxhall Bridge Road, London, SW1V 2SA", @publisher.address)
     end
 
     def test_publisher_has_email()
@@ -28,7 +28,7 @@ class PublisherTest < MiniTest::Test
     end
 
     def test_publisher_has_phone_number()
-        assert_equal("+44 (0)1206 256000", @publisher.phone_number)
+        assert_equal("+44 (0)20 7840 8400", @publisher.phone_number)
     end
 
     def test_can_change_name()

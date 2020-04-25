@@ -46,7 +46,7 @@ class Author
     end
 
     def self.map_to_objects(authors_array)
-        return authors_array.map {|hash| Author.new(hash)}
+        return authors_array.map {|author_hash| Author.new(author_hash)}
     end
 
     def self.delete_all()
