@@ -11,7 +11,7 @@ class Author
         @last_name = options["last_name"]
     end
 
-    def display_name()
+    def print_name()
         return "#{@first_name.capitalize()} #{@last_name.capitalize()}"
     end
 
