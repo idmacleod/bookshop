@@ -51,4 +51,11 @@ class Publisher
         SqlRunner.run("DELETE FROM publishers;")
     end
 
+    def self.find(id)
+        sql = "SELECT * FROM publishers WHERE id = $1"
+        values = [id]
+        publisher_hash = SqlRunner.run(sql, values).first()
+        return Publisher.new(publisher_hash) if publisher_hash
+    end
+
 end
