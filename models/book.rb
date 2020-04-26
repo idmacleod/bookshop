@@ -14,11 +14,14 @@ class Book
         @buy_cost = options["buy_cost"].to_i
         @sell_price = options["sell_price"].to_i
         @stock_count = options["stock_count"].to_i
-        @copies_sold = 0
+        options["copies_sold"] ? @copies_sold = options["copies_sold"].to_i : @copies_sold = 0
     end
 
     def buy_from_publisher(copies)
-        @stock_count += copies if copies > 0
+        if (copies > 0)
+            @stock_count += copies
+            update()
+        end
     end
 
     def enough_stock?(copies)
@@ -29,7 +32,87 @@ class Book
         if (copies > 0 && enough_stock?(copies))
             @stock_count -= copies
             @copies_sold += copies
+            update()
         end
+    end
+
+    # ---------------------- CRUD Methods ---------------------- #
+
+    # (C)reate
+    def save()
+        sql = "INSERT INTO books (
+            title,
+            author_id,
+            publisher_id,
+            description,
+            genre,
+            buy_cost,
+            sell_price,
+            stock_count,
+            copies_sold
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;"
+        values = [
+            @title,
+            @author_id,
+            @publisher_id,
+            @description,
+            @genre,
+            @buy_cost,
+            @sell_price,
+            @stock_count,
+            @copies_sold
+        ]
+        @id = SqlRunner.run(sql, values)[0]["id"].to_i
+    end
+
+    # (R)ead
+    def self.all()
+        sql = "SELECT * FROM books ORDER BY id;"
+        books_array = SqlRunner.run(sql)
+        return Book.map_to_objects(books_array)
+    end
+
+    # (U)pdate
+    def update()
+        sql = "UPDATE books SET (
+            title,
+            author_id,
+            publisher_id,
+            description,
+            genre,
+            buy_cost,
+            sell_price,
+            stock_count,
+            copies_sold
+        ) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10;"
+        values = [
+            @title,
+            @author_id,
+            @publisher_id,
+            @description,
+            @genre,
+            @buy_cost,
+            @sell_price,
+            @stock_count,
+            @copies_sold,
+            @id
+        ]
+        SqlRunner.run(sql, values)
+    end
+
+    # (D)elete
+    def delete()
+        sql = "DELETE FROM books WHERE id = $1";
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
+    def self.map_to_objects(books_array)
+        return books_array.map {|book_hash| Book.new(book_hash)}
+    end
+
+    def self.delete_all()
+        SqlRunner.run("DELETE FROM books;")
     end
 
 end

@@ -28,8 +28,33 @@ author1.save()
 author2 = Author.new({"first_name" => "Kurt", "last_name" => "Vonnegut"})
 author2.save()
 
+#Seed Books
+book1 = Book.new({
+    "title" => "Dance Dance Dance",
+    "author_id" => author1.id,
+    "publisher_id" => publisher1.id,
+    "description" => "Surreal sequel to 'A Wild Sheep Chase', inspired by film noir.",
+    "genre" => "Fiction",
+    "buy_cost" => "400",
+    "sell_price" => "699",
+    "stock_count" => "100"
+})
+book1.save()
+book2 = Book.new({
+    "title" => "Cat's Cradle",
+    "author_id" => author2.id,
+    "publisher_id" => publisher2.id,
+    "description" => "Apocalyptic sci-fi black comedy.",
+    "genre" => "Science Fiction",
+    "buy_cost" => "300",
+    "sell_price" => "799",
+    "stock_count" => "250"
+})
+book2.save()
+
 publishers = Publisher.all()
 authors = Author.all()
+books = Book.all()
 
 binding.pry
 nil
