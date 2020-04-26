@@ -53,4 +53,11 @@ class Author
         SqlRunner.run("DELETE FROM authors;")
     end
 
+    def self.find(id)
+        sql = "SELECT * FROM authors WHERE id = $1"
+        values = [id]
+        author_hash = SqlRunner.run(sql, values).first()
+        return Author.new(author_hash) if author_hash
+    end
+
 end
