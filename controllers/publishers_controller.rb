@@ -1,6 +1,6 @@
 require("sinatra")
 require("sinatra/contrib/all") if development?
-require_relative("models/publisher")
+require_relative("../models/publisher")
 also_reload("models/*")
 
 # ---------------------- RESTful Actions ---------------------- #
