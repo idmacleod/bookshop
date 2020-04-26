@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require_relative("cash")
 
 class Book
 
@@ -19,6 +20,14 @@ class Book
         options["copies_sold"] ? @copies_sold = options["copies_sold"].to_i : @copies_sold = 0
     end
 
+    def author()
+        return Author.find(@author_id)
+    end
+
+    def publisher()
+        return Publisher.find(@publisher_id)
+    end
+
     def buy_from_publisher(copies)
         if (copies > 0)
             @stock_count += copies
@@ -36,6 +45,14 @@ class Book
             @copies_sold += copies
             update()
         end
+    end
+
+    def print_buy_cost()
+        return Cash.in_pounds(@buy_cost)
+    end
+
+    def print_sell_price()
+        return Cash.in_pounds(@sell_price)
     end
 
     # ---------------------- CRUD Methods ---------------------- #
