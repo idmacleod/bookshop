@@ -55,6 +55,10 @@ class Book
         return Cash.in_pounds(@sell_price)
     end
 
+    def print_markup()
+        return Cash.in_pounds(@sell_price - @buy_cost)
+    end
+
     # ---------------------- CRUD Methods ---------------------- #
 
     # (C)reate
