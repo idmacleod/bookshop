@@ -1,0 +1,11 @@
+<h2>Author Portal</h2>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @authors.each do |author|%>
+    <tr>
+      <td><%= author.display_name() %></td>
+    </tr>
+  <% end %>
+</table>

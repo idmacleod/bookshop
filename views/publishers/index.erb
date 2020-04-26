@@ -1,0 +1,17 @@
+<h2>Publisher Portal</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+  </tr>
+  <% @publishers.each do |publisher|%>
+    <tr>
+      <td><%= publisher.name %></td>
+      <td><%= publisher.address %></td>
+      <td><%= publisher.email %></td>
+      <td><%= publisher.phone_number %></td>
+    </tr>
+  <% end %>
+</table>

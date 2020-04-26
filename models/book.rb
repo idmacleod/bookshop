@@ -1,3 +1,5 @@
+require_relative("../db/sql_runner")
+
 class Book
 
     attr_accessor :title, :author_id, :publisher_id, :description, :genre

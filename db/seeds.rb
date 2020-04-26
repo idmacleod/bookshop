@@ -22,13 +22,13 @@ publisher2 = Publisher.new({
 })
 publisher2.save()
 
-#Seed Authors
+# Seed Authors
 author1 = Author.new({"first_name" => "Haruki", "last_name" => "Murakami"})
 author1.save()
 author2 = Author.new({"first_name" => "Kurt", "last_name" => "Vonnegut"})
 author2.save()
 
-#Seed Books
+# Seed Books
 book1 = Book.new({
     "title" => "Dance Dance Dance",
     "author_id" => author1.id,
