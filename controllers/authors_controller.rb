@@ -10,3 +10,9 @@ get "/authors" do
     @authors = Author.all()
     erb(:"authors/index")
 end
+
+# SHOW
+get "/authors/:id" do
+    @author = Author.find(params[:id].to_i)
+    erb(:"authors/show")
+end
