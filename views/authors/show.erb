@@ -9,3 +9,24 @@
     <td><%= @author.last_name %></td>
   </tr>
   </table>
+  <h3>Books by <%= @author.print_name() %></h3>
+  <table>
+  <tr>
+    <th>Title</th>
+    <th>Publisher</th>
+    <th>Genre</th>
+    <th>Price (Markup)</th>
+    <th>Stock</th>
+    <th>Copies Sold</th>
+  </tr>
+  <% @books.each do |book|%>
+    <tr>
+      <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
+      <td><a href="/publishers/<%= book.publisher_id %>"><%= book.publisher().name %></a></td>
+      <td><%= book.genre %></td>
+      <td><%= book.print_sell_price() %> (+<%= book.print_markup() %>)</td>
+      <td><%= book.stock_count %></td>
+      <td><%= book.copies_sold %></td>
+    </tr>
+  <% end %>
+</table>

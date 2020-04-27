@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require_relative("book")
 
 class Author
 
@@ -43,6 +44,13 @@ class Author
         sql = "DELETE FROM authors WHERE id = $1";
         values = [@id]
         SqlRunner.run(sql, values)
+    end
+
+    def books()
+        sql = "SELECT * FROM books WHERE author_id = $1 ORDER BY id"
+        values = [@id]
+        books_array = SqlRunner.run(sql, values)
+        return Book.map_to_objects(books_array)
     end
 
     def self.map_to_objects(authors_array)

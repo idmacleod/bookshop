@@ -14,5 +14,6 @@ end
 # SHOW
 get "/publishers/:id" do
     @publisher = Publisher.find(params[:id].to_i)
+    @books = @publisher.books()
     erb(:"publishers/show")
 end
