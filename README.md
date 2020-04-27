@@ -1,5 +1,7 @@
 A simple inventory management app for a bookshop, written in Ruby with a Sinatra front-end and a PostgreSQL database.
 
+![class diagram](sketch.jpg)
+
 Running instructions:
 * Clone the repo
 * Create a database called bookshop (`createdb bookshop`)
