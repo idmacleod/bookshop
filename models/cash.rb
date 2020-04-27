@@ -1,3 +1,5 @@
+require("pry")
+
 class Cash
 
     def self.in_pounds(amount_in_pence)
@@ -10,4 +12,11 @@ class Cash
         return "£#{pounds}.#{remainder}"
     end
 
+    def self.in_pence(amount_in_pounds)
+        return (amount_in_pounds * 100).to_i
+    end
+
 end
+
+binding.pry
+nil
