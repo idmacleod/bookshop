@@ -25,7 +25,7 @@ class Publisher
 
     # (R)ead
     def self.all()
-        sql = "SELECT * FROM publishers ORDER BY id;"
+        sql = "SELECT * FROM publishers ORDER BY name;"
         publishers_array = SqlRunner.run(sql)
         return Publisher.map_to_objects(publishers_array)
     end
