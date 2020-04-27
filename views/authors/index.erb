@@ -5,7 +5,11 @@
   </tr>
   <% @authors.each do |author|%>
     <tr>
-      <td><%= author.print_name() %></td>
+      <td><a href="/authors/<%= author.id %>"><%= author.print_name() %></a></td>
     </tr>
   <% end %>
+  <tr>
+    <td><a href="/authors/new">+ Create New</a></td>
+  </tr>
 </table>
+

@@ -5,6 +5,11 @@ also_reload("models/*")
 
 # ---------------------- RESTful Actions ---------------------- #
 
+# NEW
+get "/authors/new" do
+    erb(:"authors/new")
+end
+
 # INDEX
 get "/authors" do
     @authors = Author.all()
