@@ -1,5 +1,3 @@
-require("pry")
-
 class Cash
 
     def self.in_pounds(amount_in_pence)
@@ -17,6 +15,3 @@ class Cash
     end
 
 end
-
-binding.pry
-nil
