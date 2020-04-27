@@ -32,3 +32,17 @@ get "/books/:id" do
     @book = Book.find(params[:id].to_i)
     erb(:"books/show")
 end
+
+# EDIT
+get "/books/:id/edit" do
+    @book = Book.find(params[:id].to_i)
+    @authors = Author.all()
+    @publishers = Publisher.all()
+    erb(:"books/edit")
+end
+
+# UPDATE
+post "/books/:id" do
+    Book.new(params).update()
+    redirect to "/books"
+end

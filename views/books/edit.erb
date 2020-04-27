@@ -1,0 +1,55 @@
+<h2>Edit Book</h2>
+<form action="/books/<%= @book.id %>" method="post">
+  <table>
+    <tr>
+      <th scope="row"><label for="title">Title</label></th>
+      <td><input type="text" name="title" id="title" value="<%= @book.title %>"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="author">Author</label></th>
+      <td>
+        <select name="author_id" id="author">
+          <% @authors.each do |author|%>
+            <option value=<%= author.id %> <%= "selected" if author.id == @book.author_id %>>
+              <%= author.print_lname_fname() %>
+            </option>
+          <% end%>
+        </select>
+      </td>
+      <td><a href="/authors/new">New</a></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="publisher">Publisher</label></th>
+      <td>
+        <select name="publisher_id" id="publisher">
+          <% @publishers.each do |publisher|%>
+            <option value=<%= publisher.id %> <%= "selected" if publisher.id == @book.publisher_id %>>
+              <%= publisher.name %>
+            </option>
+          <% end%>
+        </select>
+      </td>
+      <td><a href="/publishers/new">New</a></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="genre">Genre</label></th>
+      <td><input type="text" name="genre" id="genre" value="<%= @book.genre %>"></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th scope="row"><label for="description">Description</label></th>
+      <td><textarea name="description" id="description"><%= @book.description %></textarea></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+        <th scope="row"><label for="buy-cost">Buy Cost:</label></th>
+        <td><input type="number" name="buy_cost" id="buy-cost" value="<%= @book.buy_cost %>"></td>
+        <th scope="row"><label for="sell-price">Sell Price:</label></th>
+        <td><input type="number" name="sell_price" id="sell-price" value="<%= @book.sell_price %>"></td>
+    </tr>
+    <input type="hidden" name="stock_count" id="current-stock" value="<%= @book.stock_count %>">
+  </table>
+  <input type="submit" value="Update Book">
+</form>
