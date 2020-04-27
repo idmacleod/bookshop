@@ -1,0 +1,39 @@
+<h2>Book Details</h2>
+<table>
+  <tr>
+    <th scope="row">Title</th>
+    <td><%= @book.title %></td>
+  </tr>
+  <tr>
+    <th scope="row">Author</th>
+    <td><%= @book.author().print_name %></td>
+  </tr>
+  <tr>
+    <th scope="row">Publisher</th>
+    <td><%= @book.publisher().name %></td>
+  </tr>
+  <tr>
+    <th scope="row">Description</th>
+    <td><%= @book.description %></td>
+  </tr>
+  <tr>
+    <th scope="row">Genre</th>
+    <td><%= @book.genre %></td>
+  </tr>
+  </table>
+  <table>
+  <tr>
+    <th scope="row">Buy Cost:</th>
+    <td><%= @book.print_buy_cost() %></td>
+    <th scope="row">Sell Price:</th>
+    <td><%= @book.print_sell_price() %></td>
+    <th scope="row">Markup:</th>
+    <td><%= @book.print_markup() %></td>
+  </tr>
+  <tr>
+    <th scope="row">Stock:</th>
+    <td><%= @book.stock_count %></td>
+    <th scope="row">Copies Sold:</th>
+    <td><%= @book.copies_sold %></td>
+  </tr>
+</table>

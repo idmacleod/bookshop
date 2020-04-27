@@ -138,4 +138,11 @@ class Book
         SqlRunner.run("DELETE FROM books;")
     end
 
+    def self.find(id)
+        sql = "SELECT * FROM books WHERE id = $1"
+        values = [id]
+        book_hash = SqlRunner.run(sql, values).first()
+        return Book.new(book_hash) if book_hash
+    end
+
 end
