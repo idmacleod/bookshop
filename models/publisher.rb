@@ -13,7 +13,7 @@ class Publisher
         @phone_number = options["phone_number"]
     end
 
-    # ---------------------- CRUD Methods ---------------------- #
+    # ---------------------- DB Methods ---------------------- #
 
     # (C)reate
     def save()

@@ -15,7 +15,7 @@ class Author
         return "#{@first_name.capitalize()} #{@last_name.capitalize()}"
     end
 
-    # ---------------------- CRUD Methods ---------------------- #
+    # ---------------------- DB Methods ---------------------- #
 
     # (C)reate
     def save()

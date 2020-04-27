@@ -59,7 +59,7 @@ class Book
         return Cash.in_pounds(@sell_price - @buy_cost)
     end
 
-    # ---------------------- CRUD Methods ---------------------- #
+    # ---------------------- DB Methods ---------------------- #
 
     # (C)reate
     def save()
