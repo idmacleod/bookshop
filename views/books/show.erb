@@ -38,5 +38,10 @@
   </tr>
   <tr>
     <td><a href="/books/<%= @book.id %>/edit">Edit Details</a></td>
+    <td>
+      <form action="/books/<%= @book.id %>/delete" method="post">
+        <input type="submit" value="Delete Book">
+      </form>
+    </td>
   </tr>
 </table>

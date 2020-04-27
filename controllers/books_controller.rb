@@ -46,3 +46,9 @@ post "/books/:id" do
     Book.new(params).update()
     redirect to "/books"
 end
+
+# DESTROY
+post "/books/:id/delete" do
+    Book.find(params[:id].to_i).delete()
+    redirect to "/books"
+end

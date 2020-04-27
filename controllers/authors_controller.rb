@@ -40,3 +40,12 @@ post "/authors/:id" do
     Author.new(params).update()
     redirect to "/authors"
 end
+
+# DESTROY
+post "/authors/:id/delete" do
+    Author.find(params[:id].to_i).delete()
+    redirect to "/authors"
+end
+
+
+

@@ -40,3 +40,9 @@ post "/publishers/:id" do
     Publisher.new(params).update()
     redirect to "/publishers"
 end
+
+# DESTROY
+post "/publishers/:id/delete" do
+    Publisher.find(params[:id].to_i).delete()
+    redirect to "/publishers"
+end

@@ -10,6 +10,11 @@
   </tr>
   <tr>
     <td><a href="/authors/<%= @author.id %>/edit">Edit Details</a></td>
+    <td>
+      <form action="/authors/<%= @author.id %>/delete" method="post">
+        <input type="submit" value="Delete Author">
+      </form>
+    </td>
   </tr>
 </table>
 <h3>Books by <%= @author.print_name() %></h3>
