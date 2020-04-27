@@ -1,0 +1,22 @@
+<h2>Edit Publisher</h2>
+<form action="/publishers/<%= @publisher.id %>" method="post">
+  <table>
+    <tr>
+      <th scope="row"><label for="name">Name</label></th>
+      <td><input type="text" name="name" id="name" value="<%= @publisher.name %>"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="address">Address</label></th>
+      <td><input type="text" name="address" id="address" value="<%= @publisher.address %>"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="email">Email</label></th>
+      <td><input type="email" name="email" id="email" value="<%= @publisher.email %>"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="phone-number">Phone Number</label></th>
+      <td><input type="text" name="phone_number" id="phone-number" value="<%= @publisher.phone_number %>"></td>
+    </tr>
+  </table>
+  <input type="submit" value="Update Publisher">
+</form>
