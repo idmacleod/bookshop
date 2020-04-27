@@ -6,11 +6,11 @@
   </tr>
   <tr>
     <th scope="row">Author</th>
-    <td><%= @book.author().print_name %></td>
+    <td><a href="/authors/<%= @book.author_id %>"><%= @book.author().print_name %></a></td>
   </tr>
   <tr>
     <th scope="row">Publisher</th>
-    <td><%= @book.publisher().name %></td>
+    <td><a href="/publishers/<%= @book.publisher_id %>"><%= @book.publisher().name %></a></td>
   </tr>
   <tr>
     <th scope="row">Description</th>
