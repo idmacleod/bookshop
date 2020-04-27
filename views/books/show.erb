@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <th scope="row">Stock:</th>
-    <td><%= @book.stock_count %></td>
+    <td class=<%= @book.stock_status() %>><%= @book.stock_count %></td>
     <th scope="row">Copies Sold:</th>
     <td><%= @book.copies_sold %></td>
   </tr>

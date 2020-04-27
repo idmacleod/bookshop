@@ -59,6 +59,12 @@ class Book
         return Cash.in_pounds(@sell_price - @buy_cost)
     end
 
+    def stock_status()
+        return "stock_ok" if @stock_count >= 10
+        return "sold_out" if @stock_count == 0
+        return "stock_low"
+    end
+
     # ---------------------- DB Methods ---------------------- #
 
     # (C)reate
