@@ -7,11 +7,23 @@
     </tr>
     <tr>
       <th scope="row"><label for="author">Author</label></th>
-      <td><input type="number" name="author_id" id="author"></td>
+      <td>
+        <select>
+          <% @authors.each do |author|%>
+            <option value=<%= author.id %>><%= author.print_name() %></option>
+          <% end%>
+        </select>
+      </td>
     </tr>
     <tr>
       <th scope="row"><label for="publisher">Publisher</label></th>
-      <td><input type="number" name="publisher_id" id="publisher"></td>
+      <td>
+        <select>
+          <% @publishers.each do |publisher|%>
+            <option value=<%= publisher.id %>><%= publisher.name %></option>
+          <% end%>
+        </select>
+      </td>
     </tr>
     <tr>
       <th scope="row"><label for="description">Description</label></th>

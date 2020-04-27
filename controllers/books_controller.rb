@@ -1,12 +1,16 @@
 require("sinatra")
 require("sinatra/contrib/all") if development?
 require_relative("../models/book")
+require_relative("../models/author")
+require_relative("../models/publisher")
 also_reload("models/*")
 
 # ---------------------- RESTful Actions ---------------------- #
 
 # NEW
 get "/books/new" do
+    @authors = Author.all()
+    @publishers = Publisher.all()
     erb(:"books/new")
 end
 
