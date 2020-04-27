@@ -11,7 +11,7 @@ class Cash
     end
 
     def self.in_pence(amount_in_pounds)
-        return (amount_in_pounds * 100).to_i
+        return (amount_in_pounds.to_f * 100).to_i
     end
 
 end

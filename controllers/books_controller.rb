@@ -16,7 +16,8 @@ end
 
 # CREATE
 post "/books" do
-    puts params
+    params[:buy_cost] = Cash.in_pence(params[:buy_cost])
+    params[:sell_price] = Cash.in_pence(params[:sell_price])
     Book.new(params).save()
     redirect to "/books"
 end
@@ -43,6 +44,8 @@ end
 
 # UPDATE
 post "/books/:id" do
+    params[:buy_cost] = Cash.in_pence(params[:buy_cost])
+    params[:sell_price] = Cash.in_pence(params[:sell_price])
     Book.new(params).update()
     redirect to "/books"
 end
