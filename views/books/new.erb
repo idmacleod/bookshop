@@ -14,6 +14,7 @@
           <% end%>
         </select>
       </td>
+      <td><a href="/authors/new">New</a></td>
     </tr>
     <tr>
       <th scope="row"><label for="publisher">Publisher</label></th>
@@ -24,14 +25,17 @@
           <% end%>
         </select>
       </td>
+      <td><a href="/publishers/new">New</a></td>
     </tr>
+    <tr>
+      <th scope="row"><label for="genre">Genre</label></th>
+      <td><input type="text" name="genre" id="genre"></td>
+    </tr>
+  </table>
+  <table>
     <tr>
       <th scope="row"><label for="description">Description</label></th>
-      <td><input type="text" name="description" id="description"></td>
-    </tr>
-    <tr>
-      <th scope="row"><label for="description">Genre</label></th>
-      <td><input type="text" name="genre" id="genre"></td>
+      <td><textarea name="description" id="description"></textarea></td>
     </tr>
   </table>
   <table>
