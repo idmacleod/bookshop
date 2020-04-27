@@ -15,7 +15,7 @@
       <td><a href="/authors/<%= book.author_id %>"><%= book.author().print_name %></a></td>
       <td><a href="/publishers/<%= book.publisher_id %>"><%= book.publisher().name %></a></td>
       <td><%= book.genre %></td>
-      <td><%= book.print_sell_price() %> (+<%= book.print_markup() %>)</td>
+      <td>£<%= book.print_sell_price() %> (+£<%= book.print_markup() %>)</td>
       <td><%= book.stock_count %></td>
       <td><%= book.copies_sold %></td>
     </tr>
