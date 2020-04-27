@@ -28,3 +28,15 @@ get "/authors/:id" do
     @books = @author.books()
     erb(:"authors/show")
 end
+
+# EDIT
+get "/authors/:id/edit" do
+    @author = Author.find(params[:id].to_i)
+    erb(:"authors/edit")
+end
+
+# UPDATE
+post "/authors/:id" do
+    Author.new(params).update()
+    redirect to "/authors"
+end

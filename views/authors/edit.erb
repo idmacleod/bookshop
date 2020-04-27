@@ -1,0 +1,14 @@
+<h2>Edit Author</h2>
+<form action="/authors/<%= @author.id %>" method="post">
+  <table>
+    <tr>
+      <th scope="row"><label for="first-name">First Name</label></th>
+      <td><input type="text" name="first_name" id="first-name" value="<%= @author.first_name %>"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="last-name">Last Name</label></th>
+      <td><input type="text" name="last_name" id="last-name" value="<%= @author.last_name %>"></td>
+    </tr>
+  </table>
+  <input type="submit" value="Update Author">
+</form>

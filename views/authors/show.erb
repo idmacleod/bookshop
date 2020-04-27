@@ -8,6 +8,9 @@
     <th scope="row">Last Name</th>
     <td><%= @author.last_name %></td>
   </tr>
+  <tr>
+    <td><a href="/authors/<%= @author.id %>/edit">Edit Details</a></td>
+  </tr>
   </table>
   <h3>Books by <%= @author.print_name() %></h3>
   <table>
