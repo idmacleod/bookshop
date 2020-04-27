@@ -10,6 +10,12 @@ get "/authors/new" do
     erb(:"authors/new")
 end
 
+# CREATE
+post "/authors" do
+    Author.new(params).save()
+    redirect to "/authors"
+end
+
 # INDEX
 get "/authors" do
     @authors = Author.all()

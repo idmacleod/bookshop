@@ -10,6 +10,12 @@ get "/publishers/new" do
     erb(:"publishers/new")
 end
 
+# CREATE
+post "/publishers" do
+    Publisher.new(params).save()
+    redirect to "/publishers"
+end
+
 # INDEX
 get "/publishers" do
     @publishers = Publisher.all()

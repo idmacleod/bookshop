@@ -14,6 +14,13 @@ get "/books/new" do
     erb(:"books/new")
 end
 
+# CREATE
+post "/books" do
+    puts params
+    Book.new(params).save()
+    redirect to "/books"
+end
+
 # INDEX
 get "/books" do
     @books = Book.all()
