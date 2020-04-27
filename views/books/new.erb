@@ -1,0 +1,36 @@
+<h2>New Book</h2>
+<form action="/books" method="post">
+  <table>
+    <tr>
+      <th scope="row"><label for="title">Title</label></th>
+      <td><input type="text" name="title" id="title"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="author">Author</label></th>
+      <td><input type="number" name="author_id" id="author"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="publisher">Publisher</label></th>
+      <td><input type="number" name="publisher_id" id="publisher"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="description">Description</label></th>
+      <td><input type="text" name="description" id="description"></td>
+    </tr>
+    <tr>
+      <th scope="row"><label for="description">Genre</label></th>
+      <td><input type="text" name="genre" id="genre"></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+        <th scope="row"><label for="buy-cost">Buy Cost:</label></th>
+        <td><input type="number" name="buy_cost" id="buy-cost"></td>
+        <th scope="row"><label for="sell-price">Sell Price:</label></th>
+        <td><input type="number" name="sell_price" id="sell-price"></td>
+        <th scope="row"><label for="initial-stock">Initial Stock:</label></th>
+        <td><input type="number" name="stock_count" id="initial-stock"></td>
+    </tr>
+  </table>
+  <input type="submit" value="Create Book">
+</form>
