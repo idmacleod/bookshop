@@ -10,7 +10,7 @@
       <td>
         <select>
           <% @authors.each do |author|%>
-            <option value=<%= author.id %>><%= author.print_name() %></option>
+            <option value=<%= author.id %>><%= author.print_lname_fname() %></option>
           <% end%>
         </select>
       </td>

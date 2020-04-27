@@ -16,6 +16,10 @@ class Author
         return "#{@first_name.capitalize()} #{@last_name.capitalize()}"
     end
 
+    def print_lname_fname()
+        return "#{@last_name.capitalize()}, #{@first_name.capitalize()}"
+    end
+
     # ---------------------- DB Methods ---------------------- #
 
     # (C)reate
@@ -27,7 +31,7 @@ class Author
 
     # (R)ead
     def self.all()
-        sql = "SELECT * FROM authors ORDER BY id;"
+        sql = "SELECT * FROM authors ORDER BY last_name, first_name;"
         authors_array = SqlRunner.run(sql)
         return Author.map_to_objects(authors_array)
     end
