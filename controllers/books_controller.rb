@@ -55,3 +55,20 @@ post "/books/:id/delete" do
     Book.find(params[:id].to_i).delete()
     redirect to "/books"
 end
+
+# ------------------------------------------------------------- #
+
+# Path for buying books
+post "/books/:id/buy" do
+    book = Book.find(params[:id].to_i)
+    book.buy_from_publisher(params[:copies].to_i)
+    redirect to "/books/#{params[:id]}"
+end
+
+# Path for selling books
+post "/books/:id/sell" do
+    book = Book.find(params[:id].to_i)
+    book.sell_to_customer(params[:copies].to_i)
+    redirect to "/books/#{params[:id]}"
+end
+    

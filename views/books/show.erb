@@ -45,3 +45,20 @@
     </td>
   </tr>
 </table>
+<table>
+  <tr>
+    <form action="/books/<%= @book.id %>/buy" method="post">
+      <th scope="row"><label for="buy-copies">Buy Copies From Publisher:</label></th>
+      <td><input type="number" min="0" name="copies" id="buy-copies"></td>
+      <td><input type="submit" value="Buy"></td>
+    </form>
+  </tr>
+  <tr>
+    <form action="/books/<%= @book.id %>/sell" method="post">
+      <th scope="row"><label for="sell-copies">Sell Copies To Customer:</label></th>
+      <td><input type="number" min="0" name="copies" id="sell-copies"></td>
+      <td><input type="submit" value="Sell"></td>
+    </form>
+  </tr>
+</table>
+  
