@@ -5,6 +5,7 @@
     <input class="btn red" type="submit" value="Delete Book">
   </form>
 </div>
+
 <table class="horizontal">
   <tr>
     <th scope="row">Title</th>
@@ -27,34 +28,35 @@
     <td><%= @book.genre %></td>
   </tr>
 </table>
-<table class="horizontal">
-  <tr>
-    <th scope="row">Buy Cost:</th>
-    <td>£<%= @book.print_buy_cost() %></td>
-    <th scope="row">Sell Price:</th>
-    <td>£<%= @book.print_sell_price() %></td>
-    <th scope="row">Markup:</th>
-    <td>£<%= @book.print_markup() %></td>
-  </tr>
-  <tr>
-    <th scope="row">Stock:</th>
-    <td class=<%= @book.stock_status() %>><%= @book.stock_count %></td>
-    <th scope="row">Copies Sold:</th>
-    <td><%= @book.copies_sold %></td>
-  </tr>
-</table>
+
 <table class="horizontal">
   <tr>
     <form action="/books/<%= @book.id %>/buy" method="post">
-      <th scope="row"><label for="buy-copies">Buy Copies From Publisher:</label></th>
+      <th scope="row"><label for="buy-copies">Buy From Publisher</label></th>
       <td><input type="number" min="0" name="copies" id="buy-copies"><input class="btn" type="submit" value="Buy"></td>
     </form>
   </tr>
   <tr>
     <form action="/books/<%= @book.id %>/sell" method="post">
-      <th scope="row"><label for="sell-copies">Sell Copies To Customer:</label></th>
+      <th scope="row"><label for="sell-copies">Sell To Customer</label></th>
       <td><input type="number" min="0" name="copies" id="sell-copies"><input class="btn" type="submit" value="Sell"></td>
     </form>
   </tr>
 </table>
-  
+
+<table>
+  <tr>
+    <th scope="row">Buy Cost</th>
+    <th scope="row">Sell Price</th>
+    <th scope="row">Markup</th>
+    <th scope="row">Stock</th>
+    <th scope="row">Copies Sold</th>
+  </tr>
+  <tr>
+    <td>£<%= @book.print_buy_cost() %></td>
+    <td>£<%= @book.print_sell_price() %></td>
+    <td>£<%= @book.print_markup() %></td>
+    <td class=<%= @book.stock_status() %>><%= @book.stock_count %></td>
+    <td><%= @book.copies_sold %></td>
+  </tr>
+</table>
