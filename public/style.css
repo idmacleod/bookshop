@@ -3,6 +3,11 @@ body {
     color: #2B2D42;
 }
 
+a {
+    text-decoration: none;
+    color: #2B2D42
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -36,22 +41,22 @@ nav {
 
 nav a {
     padding: 0.5rem;
-    color: #2B2D42;
-    text-decoration: none;
 }
 
 nav a:hover, nav a:active {
-    padding: 0.5rem;
     background-color: #2B2D42;
     color: white;
-    text-decoration: none;
+}
+
+.subheader {
+    display: flex;
+    align-items: center;
+    background-color: #FFD4F3;
 }
 
 h2 {
     margin: 0;
-    padding: 0.5rem;
-    text-align: right;
-    background-color: #FFD4F3;
+    padding: 0.5rem 1rem;
 }
 
 table {
@@ -67,11 +72,6 @@ th {
 td {
     padding: 0.25rem 1rem;
     background-color: white;
-}
-
-td a {
-    color: #2B2D42;
-    text-decoration: none;
 }
 
 td a:hover, td a:active {
@@ -92,6 +92,20 @@ table.horizontal th {
 
 table.horizontal td {
     border: 1px solid #2B2D42;
+}
+
+a.btn {
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid #2B2D42;
+    border-radius: 1rem;
+    background-color: #bcffbc;
+}
+
+a.btn:hover, a.btn:active {
+    text-decoration: none;
+    box-shadow: 0.1rem 0.1rem 0.25rem #2B2D4266;
 }
 
 .center {

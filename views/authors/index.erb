@@ -1,4 +1,7 @@
-<h2>All Authors</h2>
+<div class="subheader">
+  <h2>All Authors</h2>
+  <a href="/authors/new" class="btn">Create New</a>
+</div>
 <table>
   <tr>
     <th>Name</th>
@@ -8,8 +11,4 @@
       <td><a href="/authors/<%= author.id %>"><%= author.print_name() %></a></td>
     </tr>
   <% end %>
-  <tr>
-    <td><a href="/authors/new">+ Create New</a></td>
-  </tr>
 </table>
-
