@@ -6,5 +6,5 @@ require_relative("controllers/books_controller")
 also_reload("models/*")
 
 get "/" do
-    erb(:index)
+    redirect to "/books"
 end
