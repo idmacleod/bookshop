@@ -88,10 +88,17 @@ def on_click(column)
     return "/books/#{column}/asc"
 end
 
+# Path for filtering by genre
+get "/books/filter/:genre" do
+    @genre = params[:genre]
+    @books = Book.filter_by_genre(@genre)
+    erb(:"books/index")
+end
+
 # Path for sorting
 get "/books/:sort/:direction" do
     @sort = params[:sort]
     @direction = params[:direction].upcase()
-    @books = Book.all(@sort, @direction) 
+    @books = Book.all(@sort, @direction)
     erb(:"books/index")
 end

@@ -1,6 +1,7 @@
 <div class="subheader">
-  <h2>All Books</h2>
-  <a href="/books/new" class="btn">Create New</a>
+  <h2>All <%= "#{@genre} " %>Books</h2>
+  <%= '<a href="/books/new" class="btn">Create New</a>' if !@genre %>
+  <%= '<a href="/books" class="btn red">Remove Filter</a>' if @genre %>
 </div>
 <table>
   <tr>
@@ -17,7 +18,7 @@
       <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
       <td><a href="/authors/<%= book.author_id %>"><%= book.author().print_name %></a></td>
       <td><a href="/publishers/<%= book.publisher_id %>"><%= book.publisher().name %></a></td>
-      <td><%= book.genre %></td>
+      <td><a href="/books/filter/<%= book.genre %>"><%= book.genre %></a></td>
       <td>
         £<%= book.print_buy_cost() %> / £<%= book.print_sell_price() %> / £<%= book.print_markup() %>
       </td>

@@ -94,7 +94,7 @@ class Book
         @id = SqlRunner.run(sql, values)[0]["id"].to_i
     end
 
-    # (R)ead
+    # (R)ead - ORDER BY ASC/DESC would not work without string interpolation?
     def self.all(sort = "id", direction = "ASC")
         sql = "SELECT * FROM books ORDER BY #{sort} #{direction};"
         books_array = SqlRunner.run(sql)
@@ -149,6 +149,13 @@ class Book
         values = [id]
         book_hash = SqlRunner.run(sql, values).first()
         return Book.new(book_hash) if book_hash
+    end
+
+    def self.filter_by_genre(genre)
+        sql = "SELECT * FROM books WHERE genre = $1 ORDER BY id"
+        values = [genre]
+        books_array = SqlRunner.run(sql, values)
+        return Book.map_to_objects(books_array)
     end
 
 end
