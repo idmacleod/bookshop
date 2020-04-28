@@ -5,13 +5,16 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Email</th>
+    <th>Address</th>
     <th>Phone Number</th>
   </tr>
   <% @publishers.each do |publisher|%>
     <tr>
-      <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></td>
-      <td><a href="mailto: <%= publisher.email %>" target="_blank"><%= publisher.email %></a></td>
+      <td>
+        <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a>
+        <a class="btn" href="mailto: <%= publisher.email %>" target="_blank">Email</a>
+      </td>
+      <td><%= publisher.address %></td>
       <td><%= publisher.phone_number %></td>
     </tr>
   <% end %>

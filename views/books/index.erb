@@ -8,7 +8,7 @@
     <th>Author</th>
     <th>Publisher</th>
     <th>Genre</th>
-    <th>Price (Markup)</th>
+    <th>Buy / Sell / Markup</th>
     <th>Stock</th>
     <th>Copies Sold</th>
   </tr>
@@ -18,7 +18,9 @@
       <td><a href="/authors/<%= book.author_id %>"><%= book.author().print_name %></a></td>
       <td><a href="/publishers/<%= book.publisher_id %>"><%= book.publisher().name %></a></td>
       <td><%= book.genre %></td>
-      <td class="center">£<%= book.print_sell_price() %> (+£<%= book.print_markup() %>)</td>
+      <td>
+        £<%= book.print_buy_cost() %> / £<%= book.print_sell_price() %> / £<%= book.print_markup() %>
+      </td>
       <td class="<%= book.stock_status() %> center"><%= book.stock_count %></td>
       <td class="center"><%= book.copies_sold %></td>
     </tr>
