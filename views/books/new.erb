@@ -15,8 +15,8 @@
             <option value=<%= author.id %>><%= author.print_lname_fname() %></option>
           <% end%>
         </select>
+        <a class="btn" href="/authors/new">New</a>
       </td>
-      <td><a href="/authors/new">New</a></td>
     </tr>
     <tr>
       <th scope="row"><label for="publisher">Publisher</label></th>
@@ -26,8 +26,8 @@
             <option value=<%= publisher.id %>><%= publisher.name %></option>
           <% end%>
         </select>
+        <a class="btn" href="/publishers/new">New</a>
       </td>
-      <td><a href="/publishers/new">New</a></td>
     </tr>
     <tr>
       <th scope="row"><label for="genre">Genre</label></th>
@@ -50,5 +50,5 @@
         <td><input type="number" name="stock_count" id="initial-stock"></td>
     </tr>
   </table>
-  <input type="submit" value="Create Book">
+  <input class="btn" type="submit" value="Create Book">
 </form>

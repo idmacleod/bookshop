@@ -17,8 +17,8 @@
             </option>
           <% end%>
         </select>
+        <a class="btn" href="/authors/new">New</a>
       </td>
-      <td><a href="/authors/new">New</a></td>
     </tr>
     <tr>
       <th scope="row"><label for="publisher">Publisher</label></th>
@@ -30,8 +30,8 @@
             </option>
           <% end%>
         </select>
+        <a class="btn" href="/publishers/new">New</a>
       </td>
-      <td><a href="/publishers/new">New</a></td>
     </tr>
     <tr>
       <th scope="row"><label for="genre">Genre</label></th>
@@ -53,5 +53,5 @@
     </tr>
     <input type="hidden" name="stock_count" id="current-stock" value="<%= @book.stock_count %>">
   </table>
-  <input type="submit" value="Update Book">
+  <input class="btn amber" type="submit" value="Update Book">
 </form>
