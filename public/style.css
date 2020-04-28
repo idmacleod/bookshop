@@ -94,6 +94,23 @@ table.horizontal td {
     border: 1px solid #2B2D42;
 }
 
+input, textarea, select {
+    font-family: inherit;
+    font-size: 100%;
+    width: 15rem;
+}
+
+input[type="number"] {
+    font-family: inherit;
+    font-size: 100%;
+    width: 5rem;
+}
+
+textarea {
+    width: 40rem;
+    height: 5rem;
+}
+
 .btn {
     all: unset;
     cursor: pointer;
@@ -125,5 +142,3 @@ table.horizontal td {
 .green {
     background-color: #bcffbc;
 }
-
-

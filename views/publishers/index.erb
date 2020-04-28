@@ -11,7 +11,7 @@
   <% @publishers.each do |publisher|%>
     <tr>
       <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></td>
-      <td><%= publisher.email %></td>
+      <td><a href="mailto: <%= publisher.email %>" target="_blank"><%= publisher.email %></a></td>
       <td><%= publisher.phone_number %></td>
     </tr>
   <% end %>
