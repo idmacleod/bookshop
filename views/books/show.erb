@@ -1,5 +1,5 @@
 <h2>Book Details</h2>
-<table>
+<table class="horizontal">
   <tr>
     <th scope="row">Title</th>
     <td><%= @book.title %></td>
@@ -21,7 +21,7 @@
     <td><%= @book.genre %></td>
   </tr>
 </table>
-<table>
+<table class="horizontal">
   <tr>
     <th scope="row">Buy Cost:</th>
     <td>£<%= @book.print_buy_cost() %></td>
@@ -45,7 +45,7 @@
     </td>
   </tr>
 </table>
-<table>
+<table class="horizontal">
   <tr>
     <form action="/books/<%= @book.id %>/buy" method="post">
       <th scope="row"><label for="buy-copies">Buy Copies From Publisher:</label></th>

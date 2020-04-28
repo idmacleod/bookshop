@@ -31,7 +31,7 @@ h1 {
 nav {
     display: flex;
     align-items: center;
-    background: linear-gradient(to left, #2B2D42, white);
+    background: linear-gradient(to right, white, #2B2D42);
 }
 
 nav a {
@@ -50,17 +50,62 @@ nav a:hover, nav a:active {
 h2 {
     margin: 0;
     padding: 0.5rem;
-    background: linear-gradient(to right, #FFD4F3, white);
+    text-align: right;
+    background-color: #FFD4F3;
+}
+
+table {
+    margin: 0.5rem;
+}
+
+th {
+    padding: 0.25rem 1rem;
+    background-color: #778DA9;
+    color: white;
+}
+
+td {
+    padding: 0.25rem 1rem;
+    background-color: white;
+}
+
+td a {
+    color: #2B2D42;
+    text-decoration: none;
+}
+
+td a:hover, td a:active {
+    text-decoration: underline;
+}
+
+table.horizontal {
+    border-collapse: collapse;
+    border: 1px solid #2B2D42;
+}
+
+table.horizontal th {
+    padding: 0 0.5rem;
+    background-color: #2B2D42;
+    text-align: right;
+    border: 1px solid #2B2D42;
+}
+
+table.horizontal td {
+    border: 1px solid #2B2D42;
+}
+
+.center {
+    text-align: center;
 }
 
 .stock_ok {
-    background-color: green;
+    background-color: #bcffbc;
 }
 
 .stock_low {
-    background-color: yellow;
+    background-color: #ffff90;
 }
 
 .sold_out{
-    background-color: red;
+    background-color: #ffb9b9;
 }
