@@ -53,10 +53,10 @@
     <th scope="row">Copies Sold</th>
   </tr>
   <tr>
-    <td>£<%= @book.print_buy_cost() %></td>
-    <td>£<%= @book.print_sell_price() %></td>
-    <td>£<%= @book.print_markup() %></td>
-    <td class=<%= @book.stock_status() %>><%= @book.stock_count %></td>
+    <td class="center">£<%= @book.print_buy_cost() %></td>
+    <td class="center">£<%= @book.print_sell_price() %></td>
+    <td class="center">£<%= @book.print_markup() %></td>
+    <td class="<%= @book.stock_status() %> center"><%= @book.stock_count %></td>
     <td><%= @book.copies_sold %></td>
   </tr>
 </table>
