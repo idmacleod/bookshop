@@ -5,6 +5,7 @@
     <input class="btn red" type="submit" value="Delete Author">
   </form>
 </div>
+
 <table class="horizontal">
   <tr>
     <th scope="row">First Name</th>
@@ -15,13 +16,14 @@
     <td><%= @author.last_name %></td>
   </tr>
 </table>
+
 <h3>Books by <%= @author.print_name() %></h3>
 <table>
   <tr>
     <th>Title</th>
     <th>Publisher</th>
     <th>Genre</th>
-    <th>Price (Markup)</th>
+    <th>Buy / Sell / Markup</th>
     <th>Stock</th>
     <th>Copies Sold</th>
   </tr>
@@ -30,9 +32,11 @@
       <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
       <td><a href="/publishers/<%= book.publisher_id %>"><%= book.publisher().name %></a></td>
       <td><%= book.genre %></td>
-      <td><%= book.print_sell_price() %> (+<%= book.print_markup() %>)</td>
-      <td><%= book.stock_count %></td>
-      <td><%= book.copies_sold %></td>
+      <td>
+        £<%= book.print_buy_cost() %> / £<%= book.print_sell_price() %> / £<%= book.print_markup() %>
+      </td>
+      <td class="<%= book.stock_status() %> center"><%= book.stock_count %></td>
+      <td class="center"><%= book.copies_sold %></td>
     </tr>
   <% end %>
 </table>
