@@ -1,5 +1,9 @@
 <div class="subheader">
   <h2>Publisher Details</h2>
+  <a class="btn amber" href="/publishers/<%= @publisher.id %>/edit">Edit Details</a>
+  <form action="/publishers/<%= @publisher.id %>/delete" method="post">
+    <input class="btn red" type="submit" value="Delete Publisher">
+  </form>
 </div>
 <table class="horizontal">
   <tr>
@@ -17,14 +21,6 @@
   <tr>
     <th scope="row">Phone Number</th>
     <td><%= @publisher.phone_number %></td>
-  </tr>
-  <tr>
-    <td><a href="/publishers/<%= @publisher.id %>/edit">Edit Details</a></td>
-    <td>
-      <form action="/publishers/<%= @publisher.id %>/delete" method="post">
-        <input type="submit" value="Delete Publisher">
-      </form>
-    </td>
   </tr>
 </table>
 <h3>Published by <%= @publisher.name %></h3>

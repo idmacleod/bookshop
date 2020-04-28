@@ -60,9 +60,9 @@ class Book
     end
 
     def stock_status()
-        return "stock_ok" if @stock_count >= 10
-        return "sold_out" if @stock_count == 0
-        return "stock_low"
+        return "green" if @stock_count >= 10
+        return "red" if @stock_count == 0
+        return "amber"
     end
 
     # ---------------------- DB Methods ---------------------- #

@@ -1,8 +1,8 @@
 <div class="subheader">
   <h2>Book Details</h2>
-  <a class=btn href="/books/<%= @book.id %>/edit">Edit Details</a>
+  <a class="btn amber" href="/books/<%= @book.id %>/edit">Edit Details</a>
   <form action="/books/<%= @book.id %>/delete" method="post">
-    <input class=btn type="submit" value="Delete Book">
+    <input class="btn red" type="submit" value="Delete Book">
   </form>
 </div>
 <table class="horizontal">

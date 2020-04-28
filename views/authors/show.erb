@@ -1,5 +1,9 @@
 <div class="subheader">
   <h2>Author Details</h2>
+  <a class="btn amber" href="/authors/<%= @author.id %>/edit">Edit Details</a>
+  <form action="/authors/<%= @author.id %>/delete" method="post">
+    <input class="btn red" type="submit" value="Delete Author">
+  </form>
 </div>
 <table class="horizontal">
   <tr>
@@ -9,14 +13,6 @@
   <tr>
     <th scope="row">Last Name</th>
     <td><%= @author.last_name %></td>
-  </tr>
-  <tr>
-    <td><a href="/authors/<%= @author.id %>/edit">Edit Details</a></td>
-    <td>
-      <form action="/authors/<%= @author.id %>/delete" method="post">
-        <input type="submit" value="Delete Author">
-      </form>
-    </td>
   </tr>
 </table>
 <h3>Books by <%= @author.print_name() %></h3>
