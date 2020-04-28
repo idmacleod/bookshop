@@ -1,5 +1,56 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    color: #2B2D42;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #2B2D42, white);
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+    border-radius: 50%;
+    background: #2B2D42;
+    font-size: 1.25rem
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to left, #2B2D42, white);
+}
+
+nav a {
+    padding: 0.5rem;
+    color: #2B2D42;
+    text-decoration: none;
+}
+
+nav a:hover, nav a:active {
+    padding: 0.5rem;
+    background-color: #2B2D42;
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    margin: 0;
+    padding: 0.5rem;
+    background: linear-gradient(to right, #FFD4F3, white);
 }
 
 .stock_ok {
