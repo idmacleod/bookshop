@@ -1,5 +1,9 @@
 <div class="subheader">
   <h2>Book Details</h2>
+  <a class=btn href="/books/<%= @book.id %>/edit">Edit Details</a>
+  <form action="/books/<%= @book.id %>/delete" method="post">
+    <input class=btn type="submit" value="Delete Book">
+  </form>
 </div>
 <table class="horizontal">
   <tr>
@@ -37,14 +41,6 @@
     <td class=<%= @book.stock_status() %>><%= @book.stock_count %></td>
     <th scope="row">Copies Sold:</th>
     <td><%= @book.copies_sold %></td>
-  </tr>
-  <tr>
-    <td><a href="/books/<%= @book.id %>/edit">Edit Details</a></td>
-    <td>
-      <form action="/books/<%= @book.id %>/delete" method="post">
-        <input type="submit" value="Delete Book">
-      </form>
-    </td>
   </tr>
 </table>
 <table class="horizontal">

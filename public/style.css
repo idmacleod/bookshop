@@ -94,17 +94,18 @@ table.horizontal td {
     border: 1px solid #2B2D42;
 }
 
-a.btn {
-    text-decoration: none;
+.btn {
+    all: unset;
+    cursor: pointer;
     font-size: 0.8rem;
+    margin: 0.1rem 0.5rem;
     padding: 0.1rem 0.5rem;
     border: 1px solid #2B2D42;
     border-radius: 1rem;
     background-color: #bcffbc;
 }
 
-a.btn:hover, a.btn:active {
-    text-decoration: none;
+.btn:hover, .btn:active {
     box-shadow: 0.1rem 0.1rem 0.25rem #2B2D4266;
 }
 
