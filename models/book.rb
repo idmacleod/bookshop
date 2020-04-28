@@ -95,8 +95,8 @@ class Book
     end
 
     # (R)ead
-    def self.all()
-        sql = "SELECT * FROM books ORDER BY id;"
+    def self.all(sort = "id", direction = "ASC")
+        sql = "SELECT * FROM books ORDER BY #{sort} #{direction};"
         books_array = SqlRunner.run(sql)
         return Book.map_to_objects(books_array)
     end
