@@ -69,6 +69,14 @@ th {
     color: white;
 }
 
+th a {
+    color: white;
+}
+
+th a:hover, th a:active {
+    text-decoration: underline;
+}
+
 td {
     padding: 0.25rem 1rem;
     background-color: white;

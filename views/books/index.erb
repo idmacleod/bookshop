@@ -7,10 +7,10 @@
     <th><a href=<%= on_click("title") %>>Title</a><%= get_arrow("title") %></th>
     <th>Author</th>
     <th>Publisher</th>
-    <th>Genre</th>
+    <th><a href=<%= on_click("genre") %>>Genre</a><%= get_arrow("genre") %></th>
     <th>Buy / Sell / Markup</th>
-    <th>Stock</th>
-    <th>Copies Sold</th>
+    <th><a href=<%= on_click("stock_count") %>>Stock</a><%= get_arrow("stock_count") %></th>
+    <th><a href=<%= on_click("copies_sold") %>>Copies Sold</a><%= get_arrow("copies_sold") %></th>
   </tr>
   <% @books.each do |book|%>
     <tr>
