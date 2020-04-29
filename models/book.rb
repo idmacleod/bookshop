@@ -136,6 +136,14 @@ class Book
         SqlRunner.run(sql, values)
     end
 
+    def is_bestseller?()
+        return false if @copies_sold == 0
+        sql = "SELECT COUNT(*) FROM books WHERE copies_sold > $1;"
+        values = [@copies_sold]
+        count = SqlRunner.run(sql, values)[0]["count"].to_i
+        return count == 0
+    end
+
     def self.map_to_objects(books_array)
         return books_array.map {|book_hash| Book.new(book_hash)}
     end
