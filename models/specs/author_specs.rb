@@ -18,14 +18,18 @@ class AuthorTest < MiniTest::Test
         assert_equal("Murakami", @author.last_name)
     end
 
-    def test_display_name()
-        assert_equal("Haruki Murakami", @author.display_name())
+    def test_print_name()
+        assert_equal("Haruki Murakami", @author.print_name())
+    end
+
+    def test_print_lname_fname()
+        assert_equal("Murakami, Haruki", @author.print_lname_fname())
     end
 
     def test_can_change_names()
         @author.first_name = "Kiharu"
         @author.last_name = "Kamimura"
-        assert_equal("Kiharu Kamimura", @author.display_name())
+        assert_equal("Kiharu Kamimura", @author.print_name())
     end
 
 end
