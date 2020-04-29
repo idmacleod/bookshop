@@ -152,7 +152,7 @@ class Book
     end
 
     def self.filter_by_genre(genre)
-        sql = "SELECT * FROM books WHERE genre = $1 ORDER BY id"
+        sql = "SELECT * FROM books WHERE genre = $1 ORDER BY title"
         values = [genre]
         books_array = SqlRunner.run(sql, values)
         return Book.map_to_objects(books_array)
