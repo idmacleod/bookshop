@@ -73,8 +73,8 @@ post "/books/:id/sell" do
 end
 
 # Helper functions for sorting
-def sorted_on?(sort, direction)
-    return (sort == @sort && direction == @direction)
+def sorted_on?(column, direction)
+    return (column == @column && direction == @direction)
 end
 
 def get_arrow(column)
@@ -96,10 +96,10 @@ get "/books/filter/:genre" do
 end
 
 # Path for sorting
-get "/books/:sort/:direction" do
-    @sort = params[:sort]
+get "/books/:column/:direction" do
+    @column = params[:column]
     @direction = params[:direction].upcase()
-    @books = Book.all(@sort, @direction)
+    @books = Book.all(@column, @direction)
     erb(:"books/index")
 end
 

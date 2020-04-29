@@ -95,8 +95,8 @@ class Book
     end
 
     # (R)ead - ORDER BY ASC/DESC would not work without string interpolation?
-    def self.all(sort = "title", direction = "ASC")
-        sql = "SELECT * FROM books ORDER BY #{sort} #{direction}, title;"
+    def self.all(column = "title", direction = "ASC")
+        sql = "SELECT * FROM books ORDER BY #{column} #{direction}, title;"
         books_array = SqlRunner.run(sql)
         return Book.map_to_objects(books_array)
     end
