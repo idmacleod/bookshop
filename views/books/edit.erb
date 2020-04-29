@@ -58,6 +58,8 @@
 
   <input type="hidden" name="stock_count" id="current-stock" value="<%= @book.stock_count %>">
   <input type="hidden" name="copies_sold" id="copies-sold" value="<%= @book.copies_sold %>">
+  
   <input class="btn amber" type="submit" value="Update Book">
+  <a class="btn red" href="/books/<%= @book.id %>">Cancel</a>
 
 </form>
