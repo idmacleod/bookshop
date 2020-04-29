@@ -95,4 +95,35 @@ class BookTest < MiniTest::Test
         assert_equal(3, @book.stock_count)
     end
 
+    def test_print_buy_cost()
+        assert_equal("4.00", @book.print_buy_cost())
+    end
+
+    def test_print_sell_price()
+        assert_equal("6.99", @book.print_sell_price())
+    end
+
+    def test_print_markup()
+        assert_equal("2.99", @book.print_markup())
+    end
+
+    def test_stock_status__green()
+        @book.buy_from_publisher(10)
+        assert_equal("green", @book.stock_status())
+    end
+
+    def test_stock_status__ten()
+        @book.buy_from_publisher(7)
+        assert_equal("green", @book.stock_status())
+    end
+
+    def test_stock_status__amber()
+        assert_equal("amber", @book.stock_status())
+    end
+
+    def test_stock_status__red()
+        @book.sell_to_customer(3)
+        assert_equal("red", @book.stock_status())
+    end
+
 end
