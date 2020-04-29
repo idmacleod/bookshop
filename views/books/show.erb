@@ -57,6 +57,6 @@
     <td class="center">£<%= @book.print_sell_price() %></td>
     <td class="center">£<%= @book.print_markup() %></td>
     <td class="<%= @book.stock_status() %> center"><%= @book.stock_count %></td>
-    <td><%= @book.copies_sold %></td>
+    <td class="center"><%= @book.copies_sold %><%= " 🥇" if @book.is_bestseller?() %></td>
   </tr>
 </table>

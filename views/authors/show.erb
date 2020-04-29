@@ -36,7 +36,7 @@
         £<%= book.print_buy_cost() %> / £<%= book.print_sell_price() %> / £<%= book.print_markup() %>
       </td>
       <td class="<%= book.stock_status() %> center"><%= book.stock_count %></td>
-      <td class="center"><%= book.copies_sold %></td>
+      <td class="center"><%= book.copies_sold %><%= " 🥇" if book.is_bestseller?() %></td>
     </tr>
   <% end %>
 </table>
