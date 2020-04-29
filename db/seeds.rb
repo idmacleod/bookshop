@@ -57,6 +57,20 @@ publisher7 = Publisher.new({
     "phone_number" => "+44 (0)20 7401 9817"
 })
 publisher7.save()
+publisher8 = Publisher.new({
+    "name" => "Bloomsbury",
+    "address" => "Bloomsbury Publishing, 50 Bedford Square, London, WC1B 3DP",
+    "email" => "info@bloomsbury.com",
+    "phone_number" => "+44 (0)20 7631 5600"
+})
+publisher8.save()
+publisher9 = Publisher.new({
+    "name" => "Corgi",
+    "address" => "Corgi, Penguin Books Ltd, 80 Strand, London, WC2R 0RL",
+    "email" => "corgi@penguinrandomhouse.co.uk",
+    "phone_number" => "+44 (0)20 7632 1000"
+})
+publisher9.save()
 
 # Seed Authors
 author1 = Author.new({"first_name" => "Haruki", "last_name" => "Murakami"})
@@ -71,6 +85,10 @@ author5 = Author.new({"first_name" => "Milan", "last_name" => "Kundera"})
 author5.save()
 author6 = Author.new({"first_name" => "Mikhail", "last_name" => "Bulgakov"})
 author6.save()
+author7 = Author.new({"first_name" => "Susanna", "last_name" => "Clarke"})
+author7.save()
+author8 = Author.new({"first_name" => "Terry", "last_name" => "Pratchett"})
+author8.save()
 
 # Seed Books
 book1 = Book.new({
@@ -172,6 +190,28 @@ book9 = Book.new({
     "stock_count" => "125"
 })
 book9.save()
+book10 = Book.new({
+    "title" => "Jonathan Strange and Mr Norrell",
+    "author_id" => author7.id,
+    "publisher_id" => publisher8.id,
+    "description" => "Scholarly historical fantasy novel set in 19th century England",
+    "genre" => "Fantasy",
+    "buy_cost" => "450",
+    "sell_price" => "700",
+    "stock_count" => "500"
+})
+book10.save()
+book10 = Book.new({
+    "title" => "Small Gods",
+    "author_id" => author8.id,
+    "publisher_id" => publisher9.id,
+    "description" => "Standalone satirical fantasy - Discworld novel number thirteen.",
+    "genre" => "Fantasy",
+    "buy_cost" => "200",
+    "sell_price" => "399",
+    "stock_count" => "600"
+})
+book10.save()
 
 publishers = Publisher.all()
 authors = Author.all()
