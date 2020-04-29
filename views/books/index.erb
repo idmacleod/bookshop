@@ -1,6 +1,7 @@
 <div class="subheader">
   <h2>All <%= "#{@genre} " %>Books</h2>
   <%= '<a href="/books/new" class="btn">Create New</a>' if !@genre %>
+  <h2><%= emoji(@genre) if @genre %></h2>
   <%= '<a href="/books" class="btn red">Remove Filter</a>' if @genre %>
 </div>
 <table>
