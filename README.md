@@ -1,4 +1,8 @@
-A simple inventory management app for a bookshop, written in Ruby with a Sinatra front-end and a PostgreSQL database.
+# `bibl.io`
+
+![screenshot](screenshot.png)
+
+`bibl.io` is a simple inventory management app for bookshops, written in Ruby with a Sinatra front-end and a PostgreSQL database.
 
 ![class diagram](sketch.jpg)
 
@@ -10,7 +14,7 @@ Running instructions:
 * Launch the app by running app.rb (`ruby app.rb`)
 * Point your browser to `http://localhost:4567/`
 
-Original brief from CodeClan below:
+## Original Brief
 
 ### Shop Inventory
 
@@ -31,6 +35,6 @@ eBay, Amazon (back end only), Magento
 
 #### Possible Extensions
 
-* Calculate the markup on items in the store, and display it in the inventory
+* Calculate the markup on items in the store, and display it in the inventory.
 * Filter the inventory list by manufacturer. For example, provide an option to view all books in stock by a certain author.
-* Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
+* Categorise your items. Books might be categorised by genre (crime, horror, romance) and cars might be categorised by type (SUV, coupé, hatchback). Provide an option to filter the inventory list by these categories.
