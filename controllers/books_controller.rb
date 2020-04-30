@@ -108,5 +108,6 @@ def emoji(genre)
     return "🪐" if genre.downcase() == "science fiction"
     return "🐉" if genre.downcase() == "fantasy"
     return "🧸" if genre.downcase() == "children's"
+    return "🔮" if genre.downcase() == "magical"
     return "📖"
 end
